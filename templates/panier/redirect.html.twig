@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+
+<script>
+    (function(){
+        const stripe = Stripe('pk_test_51JNEKxJ4AWmTo1wzHo675RStXafPVdqJV0urbkuuN30nUnfAW4vb0E5HXE12m6mEyGBIoNy3fLGJGktvIshy8qc000mlr99dZL');
+        stripe.redirectToCheckout({
+            sessionId: "{{ stripeSessionId }}"
+        });
+    })();
+</script>
+
+{% endblock %}
